@@ -3,12 +3,28 @@ module.exports = {
     title: "smoothie-delight",
   },
   plugins: [
-    "gatsby-plugin-styled-components",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: "gatsby-source-filesystem",
       options: {
-        icon: "src/images/icon.png",
-      },
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      }
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Dancing script`,
+          'Teko',
+          'Raleway',
+        ],
+        display: 'swap'
+      }
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-styled-components",
   ],
 };
