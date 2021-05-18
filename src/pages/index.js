@@ -1,8 +1,9 @@
 import React from "react"
 import Layout from '../components/layout/Layout'
 import { createGlobalStyle } from 'styled-components';
+import Seo from '../components/Seo'
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
@@ -26,7 +27,7 @@ const IndexPage = () => {
   return (
     <>
       <GlobalStyle />
-      <title>Smoothie Delight</title>
+      <Seo />
       <Layout />
     </>
   )

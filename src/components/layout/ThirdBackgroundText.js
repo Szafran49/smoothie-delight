@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components'
 import { Link } from 'gatsby'
 import { observer } from 'intersection-observer'
@@ -53,28 +53,31 @@ const StyledLowerText = styled(Link)`
     text-shadow: 1px 1px #000;
     
 `
-const config = {
-    threshold: [0.1]
-};
-
-const slogan = document.querySelectorAll('.animate');
-observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.intersectionRatio > 0.1) {
-            entry.target.classList.add('animationTime');
-        }
-        else {
-            entry.target.classList.remove('animationTime');
-        }
-    });
-}, config);
-
-slogan.forEach(lineOfText => {
-    observer.observe(lineOfText);
-});
-
 
 const ThirdBackgroundText = () => {
+    const config = {
+        threshold: [0.1]
+    };
+
+    useEffect(
+        () => {
+            const slogan = document.querySelectorAll('.animate')
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0.1) {
+                        entry.target.classList.add('animationTime');
+                    }
+                    else {
+                        entry.target.classList.remove('animationTime');
+                    }
+                });
+            }, config);
+            slogan.forEach(lineOfText => {
+                observer.observe(lineOfText);
+            });
+        }, [config]
+    )
+
     return (
         <StyledWrapper >
             <StyledUpperText className="animate">MULTITUDE</StyledUpperText>

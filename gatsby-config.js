@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: "smoothie-delight",
+    title: "Smoothie Delight",
+    description: "Website advertising a new smoothie line",
+    image: "/icon.png",
+    author: "Piotr Szafranski",
+    keywords: `smoothie, delight, fit, health, great taste, lifestyle, remarkable brand`,
   },
   plugins: [
     {
