@@ -71,7 +71,7 @@ const StyledMiddleText = styled(StyledText)`
     left:-3%;
 `
 
-const ThirdBackgroundText = () => {
+const BackgroundText = () => {
     const config = {
         threshold: [0.1]
     };
@@ -101,4 +101,4 @@ const ThirdBackgroundText = () => {
     )
 }
 
-export default ThirdBackgroundText
+export default BackgroundText
