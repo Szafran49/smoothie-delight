@@ -1,21 +1,26 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import StyledLink from '../shared/Link'
 
 const StyledContainer = styled.div`
     text-align:center;
 `
-const StyledLink = styled(Link)`
-    font-size:24px;
+const GithubLink = styled.a`
+    text-decoration:none;
     color:white;
 `
+
 
 const Copyrights = () => {
     return (
         <StyledContainer>
             <span>Copyright by <StyledLink to="#"><b>Remarkable Brand</b></StyledLink></span>
             <br />
-            <span>Made by <StyledLink to="https://github.com/Szafran49" target="_blank"><b>Piotr Szafrański</b></StyledLink></span>
+            <span>Made by
+                <GithubLink href="https://github.com/Szafran49" target="_blank">
+                    <b> Piotr Szafrański </b>
+                </GithubLink>
+            </span>
         </StyledContainer>
     )
 }

@@ -1,19 +1,29 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components'
-import { Link } from 'gatsby'
+import Link from '../shared/Link'
 import { observer } from 'intersection-observer'
+import UnselectableText from '../shared/UnselectableText'
 
-const rotate1 = keyframes`
+const leftToRightMove = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-30rem) rotate(-45deg);
+    transform: translateX(-30rem);
   }
   to {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
   }
-`;
+`
 
+const rainbowEffect = keyframes`
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+`
 const StyledWrapper = styled.div`
     position: absolute;
     display: flex;
@@ -26,39 +36,45 @@ const StyledWrapper = styled.div`
     height:100%;
     font-size:96px;
     font-weight:semibold;
-    color:white;
+`
+const StyledText = styled(UnselectableText)`
+    position: relative;
+    opacity: 0;
     -webkit-text-stroke: 1px black;
     text-shadow: 1px 1px #000;
-`
-const StyledText = styled.span`
-    position:relative;
     &.animationTime {
-        animation: ${rotate1} 1s .2s linear;
+        opacity: 1;
+        animation: ${leftToRightMove} 1s 2s linear;
     }
-   
 `
-const StyledUpperText = styled(StyledText)`
-    left:-15%;
-    
-`
-const StyledMiddleText = styled(StyledText)`
-    left:-3%;
-`
+
+
 const StyledLowerText = styled(Link)`
     position:relative;
     left:10%;
-    text-decoration: white underline;
-    color:white;
-    -webkit-text-stroke: 1px black;
-    text-shadow: 1px 1px #000;
-    
+    text-decoration: underline;
+    font-size: 96px;
+    letter-spacing: 5px;
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 400% 100%;
+    animation: ${rainbowEffect} 6s ease-in-out infinite;
+`
+
+const StyledUpperText = styled(StyledText)`
+    left:-15%;
+`
+
+const StyledMiddleText = styled(StyledText)`
+    left:-3%;
 `
 
 const ThirdBackgroundText = () => {
     const config = {
         threshold: [0.1]
     };
-
     useEffect(
         () => {
             const slogan = document.querySelectorAll('.animate')
@@ -67,22 +83,20 @@ const ThirdBackgroundText = () => {
                     if (entry.intersectionRatio > 0.1) {
                         entry.target.classList.add('animationTime');
                     }
-                    else {
-                        entry.target.classList.remove('animationTime');
-                    }
                 });
             }, config);
             slogan.forEach(lineOfText => {
                 observer.observe(lineOfText);
             });
-        }, [config]
+        },
     )
 
     return (
         <StyledWrapper >
             <StyledUpperText className="animate">MULTITUDE</StyledUpperText>
             <StyledMiddleText className="animate">OF</StyledMiddleText>
-            <StyledLowerText to="#">FLAVORS</StyledLowerText>
+            <StyledLowerText to="#" >FLAVORS</StyledLowerText>
+
         </StyledWrapper>
     )
 }

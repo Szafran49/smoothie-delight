@@ -5,7 +5,6 @@ const LogoText = styled.p`
     font-family: Teko;
     font-size: 64px;
     line-height:70%;
-    color:white;
     text-align:center;
     -webkit-touch-callout: none;
     -webkit-user-select: none;

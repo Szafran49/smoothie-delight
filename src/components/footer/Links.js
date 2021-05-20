@@ -1,6 +1,6 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components'
+import Link from '../shared/Link'
 
 const dataLinks = [
     {
@@ -26,9 +26,7 @@ const dataLinks = [
 ]
 
 const StyledLink = styled(Link)`
-    font-size:24px;
     text-decoration:underline;
-    color:white;
 `
 const StyledLinkContainer = styled.div`
     display:flex;

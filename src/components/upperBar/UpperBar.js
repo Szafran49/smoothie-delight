@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CollectionLogo from './CollectionLogo'
 import BrandLogo from './BrandLogo'
-import OrderButton from './OrderButton'
+import Order from './Order'
 
 const StyledWrapper = styled.div`
     position: fixed;
@@ -23,7 +23,7 @@ const UpperSection = () => {
         <StyledWrapper>
             <BrandLogo />
             <CollectionLogo />
-            <OrderButton />
+            <Order />
         </StyledWrapper>
     )
 }
