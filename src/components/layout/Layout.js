@@ -3,7 +3,7 @@ import Background from './Background'
 import Footer from '../footer/Footer'
 import Newsletter from '../newsletter/Newsletter'
 import UpperBar from '../upperBar/UpperBar'
-import ThirdBackgroundText from './ThirdBackgroundText'
+import BackgroundText from './BackgroundText'
 
 const Layout = () => {
     return (
@@ -11,7 +11,7 @@ const Layout = () => {
             <Background imageNumber={1}>
             </Background>
             <Background imageNumber={2}>
-                <ThirdBackgroundText />
+                <BackgroundText />
             </Background>
             <Background imageNumber={3}>
                 <Footer />
