@@ -11,7 +11,9 @@ const Layout = () => {
             <Background imageNumber={1}>
             </Background>
             <Background imageNumber={2}>
+
                 <BackgroundText />
+
             </Background>
             <Background imageNumber={3}>
                 <Footer />

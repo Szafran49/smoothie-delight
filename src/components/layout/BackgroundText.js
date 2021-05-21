@@ -36,31 +36,35 @@ const StyledWrapper = styled.div`
     height:100%;
     font-size:96px;
     font-weight:semibold;
+
+
 `
 const StyledText = styled(UnselectableText)`
     position: relative;
     opacity: 0;
-    -webkit-text-stroke: 1px black;
-    text-shadow: 1px 1px #000;
+    text-shadow: -4px -4px black;
     &.animationTime {
-        opacity: 1;
-        animation: ${leftToRightMove} 1s 2s linear;
+        opacity:1;
+        animation: ${leftToRightMove} 1.5s linear;
     }
 `
 
 
-const StyledLowerText = styled(Link)`
+const StyledLinkWrapper = styled.div`
     position:relative;
     left:10%;
-    text-decoration: underline;
+`
+
+const StyledLink = styled(Link)`
     font-size: 96px;
-    letter-spacing: 5px;
+    text-shadow: -4px -4px white;
     background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     background-size: 400% 100%;
     animation: ${rainbowEffect} 6s ease-in-out infinite;
+  
 `
 
 const StyledUpperText = styled(StyledText)`
@@ -95,8 +99,9 @@ const BackgroundText = () => {
         <StyledWrapper >
             <StyledUpperText className="animate">MULTITUDE</StyledUpperText>
             <StyledMiddleText className="animate">OF</StyledMiddleText>
-            <StyledLowerText to="#" >FLAVORS</StyledLowerText>
-
+            <StyledLinkWrapper>
+                <StyledLink to="#" >FLAVORS</StyledLink>
+            </StyledLinkWrapper>
         </StyledWrapper>
     )
 }
