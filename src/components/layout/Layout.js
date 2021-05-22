@@ -3,17 +3,17 @@ import Background from './Background'
 import Footer from '../footer/Footer'
 import Newsletter from '../newsletter/Newsletter'
 import UpperBar from '../upperBar/UpperBar'
-import BackgroundText from './BackgroundText'
+import FlavorsSlogan from './FlavorsSlogan'
+import StrengthSlogan from './StrengthSlogan'
 
 const Layout = () => {
     return (
         <>
             <Background imageNumber={1}>
+                <StrengthSlogan />
             </Background>
             <Background imageNumber={2}>
-
-                <BackgroundText />
-
+                <FlavorsSlogan />
             </Background>
             <Background imageNumber={3}>
                 <Footer />
