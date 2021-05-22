@@ -4,7 +4,7 @@
 * [Setup](#setup)
 
 ## General info
-Concept of website that advertises a new smoothie line called 'smoothie-delight' by Remarkable Brand.
+Concept of website that advertises a new smoothie line called "Smoothie Delight" by Remarkable Brand.
 	
 ## Technologies
 Project is created with:
