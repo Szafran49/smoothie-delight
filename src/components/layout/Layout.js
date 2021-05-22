@@ -4,14 +4,11 @@ import Footer from '../footer/Footer'
 import Newsletter from '../newsletter/Newsletter'
 import UpperBar from '../upperBar/UpperBar'
 import FlavorsSlogan from './FlavorsSlogan'
-import StrengthSlogan from './StrengthSlogan'
 
 const Layout = () => {
     return (
         <>
-            <Background imageNumber={1}>
-                <StrengthSlogan />
-            </Background>
+            <Background imageNumber={1} />
             <Background imageNumber={2}>
                 <FlavorsSlogan />
             </Background>

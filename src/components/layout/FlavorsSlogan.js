@@ -43,7 +43,6 @@ const StyledTextContainer = styled.div`
     left:10%
 `
 
-
 const StyledText = styled(UnselectableText)`
     opacity: 0;
     text-shadow: -4px -4px black;
@@ -102,8 +101,7 @@ const FlavorsSlogan = () => {
     return (
         <StyledWrapper >
             <StyledTextContainer>
-                <StyledText className="animate">MULTITUDE</StyledText>
-                <StyledText className="animate">OF</StyledText>
+                <StyledText className="animate">MULTITUDE OF</StyledText>
                 <StyledLink to="#" >FLAVORS</StyledLink>
             </StyledTextContainer>
         </StyledWrapper>
